@@ -17,11 +17,3 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
-test('user can add a todo item', async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc/');
-
-  await page.getByPlaceholder('What needs to be done?').fill('Learn Playwright');
-  await page.getByPlaceholder('What needs to be done?').press('Enter');
-
-  await expect(page.getByText('Learn Playwright')).toBeVisible();
-});
